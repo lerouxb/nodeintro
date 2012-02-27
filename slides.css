@@ -82,6 +82,7 @@ display: block;
 
 h1 {
 font-weight: bold;
+font-size: 1.2em;
 line-height: 1.2;
 -webkit-transition: font-size 0.1s ease-in-out;
 -moz-transition: font-size 0.1s ease-in-out;
