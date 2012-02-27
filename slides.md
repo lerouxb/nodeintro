@@ -176,5 +176,5 @@ Whom to follow
 * [Sencha Labs](https://github.com/senchalabs).
 * [Jeremy Ashkenas](https://github.com/jashkenas).
 * [Caolan McMahon](https://github.com/caolan).
-* [Brendan Eich](https://twitter.com/BrendanEich)
+* [Brendan Eich](https://twitter.com/BrendanEich).
 * [CouchDB](http://couchdb.apache.org/), [MongoDB](http://www.mongodb.org/), [Redis](http://redis.io/)
