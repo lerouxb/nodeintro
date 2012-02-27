@@ -1,0 +1,112 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';}
+a, a:link, a:visited, a:active, a:hover {outline: none;}
+
+html {
+font-family: helvetica neue, sans-serif;
+color: #666;
+background-color: #f2f2f2;
+}
+
+a {color: #222; text-decoration: underline; font-weight: bold;}
+
+code {
+font-size: 0.8em;
+background-color: #ffc;
+padding: 3px;
+}
+
+strong, b {
+font-weight: bold;
+}
+em, i {
+font-style: italic;
+text-decoration: underline;
+}
+
+ul,
+li {
+display: block;
+}
+
+#slides {
+font-size: 1em;
+line-height: 1.4;
+margin: 3em auto;
+width: 60em;
+}
+
+.screen {
+padding: 0 10px;
+overflow: hidden;
+}
+
+.slide {
+-webkit-transition: max-height 0.1s ease-in-out;
+-moz-transition: max-height 0.1s ease-in-out;
+transition: max-height 0.1s ease-in-out;
+max-height: 0;
+}
+
+.current-slide {
+color: #333;
+}
+
+.screen.current-screen {
+max-height: 60em;
+}
+
+li.current-slide,
+li.before {
+height: 3em;
+max-height: 3em;
+}
+
+li.current-slide {
+font-size: 1.5em;
+}
+ul {
+}
+li.current-slide span {
+border-left: 4px solid green;
+padding-left: 6px;
+margin-left: -10px;
+display: block;
+}
+
+h1 {
+font-weight: bold;
+line-height: 1.2;
+-webkit-transition: font-size 0.1s ease-in-out;
+-moz-transition: font-size 0.1s ease-in-out;
+transition: font-size 0.1s ease-in-out;
+}
+.current-slide h1,
+.after h1 {
+font-size: 5em;
+text-shadow: #fff 1px 1px 0;
+}
+
+.before h1 {
+color: #ccc;
+margin-bottom: 2em;
+}
+
+li:last-child span {
+-webkit-animation-name: pulsate;
+-webkit-animation-duration: 1s;
+-webkit-animation-timing-function: ease-in-out;
+-webkit-animation-iteration-count: infinite
+}
+@-webkit-keyframes pulsate {
+0% {border-color: red;}
+50% {border-color: orange;}
+100% {border-color: red;}
+}
+

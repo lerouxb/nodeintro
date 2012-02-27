@@ -1,0 +1,9 @@
+*~
+*#
+*.swp
+*.swo
+.DS_Store
+._*
+node_modules
+index.html
+key
