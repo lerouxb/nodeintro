@@ -64,8 +64,8 @@ max-height: 60em;
 
 li.current-slide,
 li.before {
-height: 3em;
-max-height: 3em;
+height: 2.8em;
+max-height: 2.8em;
 }
 
 li.current-slide {
