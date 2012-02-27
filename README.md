@@ -9,7 +9,7 @@ Contains the npm info. Run `npm install` to install the dependencies.
 ### config.json
 
 The secret key that allows you to act as the speaker, the hostname and port.
-**REMEMBER TO EDIT THIS BEFORE RUNNING BUILD.JS.**
+<br>**REMEMBER TO EDIT THIS BEFORE RUNNING BUILD.JS.**
 
 ### build.js
 
