@@ -21,6 +21,7 @@ The [socket.io](http://socket.io/)-backed server-side portion of the app that ad
 ### config.json
 
 The secret key that allows you to act as the speaker, the hostname and port.
+REMEMBER TO EDIT THIS.
 
 ### slides.markdown
 
