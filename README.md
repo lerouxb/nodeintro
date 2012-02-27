@@ -13,7 +13,7 @@ The secret key that allows you to act as the speaker, the hostname and port.
 
 ### build.js
 
-Use [node-markdown](https://github.com/andris9/node-markdown) to convert slides.markdown to html and then replace {{slides}} in template.html with that and save to index.html. Run it with `node build`.
+Use [node-markdown](https://github.com/andris9/node-markdown) to convert slides.md to html and then replace {{slides}} in template.html with that and save to index.html. Run it with `node build`.
 
 ### index.html
 
