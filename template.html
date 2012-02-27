@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title>Node.js Introduction</title>
 <link rel="stylesheet" href="slides.css">
-<script src="vendor/jquery-1.7.1.min.js"></script>
-<script src="vendor/underscore.js"></script>
-<script src="slides.js"></script>
+<script src="/vendor/jquery-1.7.1.min.js"></script>
+<script src="/vendor/underscore.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/slides.js"></script>
 <script>
 $(document).ready(function() {
-    makeSlides('{{host}}', {{port}});
+    Slides.init('{{host}}', {{port}});
 });
 </script>
 </head>
