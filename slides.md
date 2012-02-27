@@ -1,4 +1,4 @@
-Browse to http://<span class="hostname">hostname</span>:<span class="port">port</span>/
+Browse to http://<span class="host">host</span>:<span class="port">port</span>/
 ===
 
 What is node.js?

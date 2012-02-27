@@ -5,8 +5,8 @@ var
     path = require('path'),
     _ = require('underscore');
     async = require('async');
-    md = require("node-markdown").Markdown;
-
+    md = require("node-markdown").Markdown,
+    config = require('./config').config;
 
 // node should have this builtin
 var readText = function(filename, callback) {
@@ -25,7 +25,11 @@ var build = exports.build = function(callback) {
             slides = md(files[1]);
 
         // poor man's mustache
-        callback(null, template.replace('{{slides}}', slides));
+        var html = template
+            .replace('{{slides}}', slides)
+            .replace('{{host}}', config.host)
+            .replace('{{port}}', config.port);
+        callback(null, html);
     });
 };
 

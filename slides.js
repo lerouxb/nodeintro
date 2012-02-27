@@ -1,6 +1,9 @@
 (function() {
 
-$(document).ready(function() {
+window.makeSlides = function(host, port) {
+    $('.host').text(host);
+    $('.port').text(port);
+
     var screen;
     $('#slides > *').each(function() {
         var el = $(this),
@@ -102,7 +105,7 @@ $(document).ready(function() {
             }
         }
     });
-});
+};
 
 }).call(this);
 
