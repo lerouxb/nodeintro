@@ -9,7 +9,8 @@ What is node.js?
 * It isn't a library (in the usual sense).
 * It isn't a framework (in the usual sense).
 * It is the virtual machine plus batteries included.
-* [Event loop hidden from the user](http://nodejs.org/about/). (just like in the browser)
+* [Event loop hidden from the user](http://nodejs.org/about/).
+  <br>(just like in the browser)
 * Or consider it a C/C++ I/O engine that's scriptable in JavaScript.
 * First class support for [HTTP](https://github.com/joyent/http-parser) and
 [processes](http://nodejs.org/docs/latest/api/child_processes.html#child_process.fork).
@@ -22,9 +23,9 @@ A step back
 Why Evented I/O?
 ================
 
-* The [C10K problem](http://www.kegel.com/c10k.html) has lots more info than what I'm about to go into.
+* The [C10K problem](http://www.kegel.com/c10k.html) has lots more info than I'm about to go into.
 * Most things are I/O bound and not CPU bound.
-* Processes (can be) heavy.
+* Processes can be heavy.
 * Threads are not (always) ideal.
 * Memory usage per concurrent connection.
 * Evented: Typically everything runs in parallel _except_ your code.
@@ -79,7 +80,7 @@ When should you consider node?
 ==============================
 
 * Whenever you're already considering an evented framework/library.
-* If your team already has html5+css+js (whatever flavours) people.
+* If your team already has html5+css+js people.
 * Chatty "soft-realtime" communication type things centered around the browser.
 * JSON-heavy apps.
 * Single-page "HTML5" apps.
@@ -121,8 +122,9 @@ The bad
 JavaScript warts
 ================
 
-* There is no PEP 8 for JavaScript. [Douglas Crockford](http://javascript.crockford.com/) comes closest.
-* 'this'-binding will enrage you.
+* There is no PEP 8 for JavaScript.
+  <br>[Douglas Crockford](http://javascript.crockford.com/) comes closest.
+* `this`-binding is a bit all over the place.
 * You'll miss Python's for loops, duck-typing "protocols", built-in types.
 * You'll miss Python-style exceptions and Python's way of using exceptions.
 * [There are two ways of defining functions](http://stackoverflow.com/questions/336859/javascript-var-functionname-function-vs-function-functionname).
@@ -137,7 +139,7 @@ JavaScript warts
 * There is a lot of misinformation out there.
 
 
-Problems that aren't JavaScript specific
+Problems that aren't JavaScript-specific
 ========================================
 
 * Within your node.js process "cooperative multi-tasking" is taking place.
@@ -145,9 +147,8 @@ Problems that aren't JavaScript specific
 * Don't just do `if (err) throw err;`
 * You have to pass on errors as the first parameter _everywhere_.
 * `if (err) return callback(err);`
-* Calling callbacks immediately vs only "once the stack is gone" will cause bugs. Probably only after you refactor.
-* `callback(err);` vs
-  <br>`setTimeout(function() {callback(err);}, 0);`
+* Some problems only appear after you refactor
+* `callback(err);` vs `setTimeout(function() {callback(err);}, 0);`
 
 
 Resources
@@ -169,7 +170,8 @@ Resources
 Whom to follow
 ==============
 
-* [Ryan Dahl](https://github.com/ry). Also [Joyent](https://github.com/joyent).
+* [Ryan Dahl](https://github.com/ry).
+* [Joyent](https://github.com/joyent).
 * [Isaac Z. Schlueter](https://github.com/isaacs).
 * [TJ Holowaychuck](https://github.com/visionmedia).
 * [Guillermo Rauch](https://github.com/guille).

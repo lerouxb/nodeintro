@@ -10,14 +10,18 @@ a, a:link, a:visited, a:active, a:hover {outline: none;}
 
 html {
 font-family: helvetica neue, sans-serif;
-color: #666;
+font-weight: 500;
+color: #222;
 background-color: #f2f2f2;
+height: 100%;
+}
+body {
+height: 100%;
 }
 
-a {color: #222; text-decoration: underline; font-weight: bold;}
+a {color: #000; border-bottom: 2px solid #000; text-decoration: none; font-weight: bold;}
 
 code {
-font-size: 0.8em;
 background-color: #ffc;
 padding: 3px;
 }
@@ -35,79 +39,115 @@ li {
 display: block;
 }
 
-#slides {
-font-size: 1em;
-line-height: 1.4;
-margin: 3em auto;
-width: 60em;
+h1, li {
+font-size: 2em;
+line-height: 1.1;
+transition: font-size 0.2s, transform 0.2s;
+-moz-transition: font-size 0.2s, -moz-transform 0.2s;
+-webkit-transition: font-size 0.2s, -webkit-transform 0.2s;
+-o-transition: font-size 0.2s, -o-transform 0.2s;
+}
+h1 {
+padding: 1em 0;
+/*background-color: #f2f2f2;*/
+z-index: 2;
+font-weight: bolder;
+}
+li {
+margin: 0.5em 0;
+z-index: 1;
 }
 
-.screen {
-padding: 0 10px;
+.after h1,
+li.after {
+opacity: 0;
+}
+li.after {
+font-size: 0em;
+margin: 0;
+}
+
+.current-screen.current-slide h1,
+li.current-slide {
+opacity: 1;
+}
+.after h1,
+.current-screen.current-slide h1 {
+font-size: 5em;
+}
+li.current-slide {
+font-size: 4em;
+}
+
+.before {
+opacity: 0;
+}
+.before h1 {
+opacity: 0.6;
+}
+li.prev-1 {
+opacity: 0.45;
+}
+li.prev-2 {
+opacity: 0.35;
+}
+li.prev-3 {
+opacity: 0.25;
+}
+li.prev-4 {
+opacity: 0.15;
+}
+li.prev-5 {
+opacity: 0.05;
+}
+
+#slides {
+position: relative;
+width: 95%;
+height: 32em;
+margin: 0 auto;
 overflow: hidden;
 }
 
-.slide {
--webkit-transition: max-height 0.1s ease-in-out;
--moz-transition: max-height 0.1s ease-in-out;
-transition: max-height 0.1s ease-in-out;
-max-height: 0;
-}
+.screen {
+position: absolute;
+top: 0;
+right: 0;
+height: 32em;
 
-.current-slide {
-color: #333;
-}
-
-.screen.current-screen {
-max-height: 60em;
-}
-
-li.current-slide,
-li.before {
-height: 2.8em;
-max-height: 2.8em;
-}
-
-li.current-slide {
-font-size: 1.5em;
-}
-ul {
-}
-li.current-slide span {
-border-left: 4px solid green;
-padding-left: 6px;
-margin-left: -10px;
-display: block;
+transition: left 0.2s, transform 0.2s;
+-moz-transition: left 0.2s, -moz-transform 0.2s;
+-webkit-transition: left 0.2s, -webkit-transform 0.2s;
+-o-transition: left 0.2s, -o-transform 0.2s;
 }
 
 h1 {
-font-weight: bold;
-font-size: 1.2em;
-line-height: 1.2;
--webkit-transition: font-size 0.1s ease-in-out;
--moz-transition: font-size 0.1s ease-in-out;
-transition: font-size 0.1s ease-in-out;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
 }
-.current-slide h1,
-.after h1 {
-font-size: 5em;
-text-shadow: #fff 1px 1px 0;
+ul {
+position: absolute;
+left: 0;
+bottom: 0;
 }
 
-.before h1 {
-color: #ccc;
-margin-bottom: 2em;
-}
 
-li:last-child span {
--webkit-animation-name: pulsate;
--webkit-animation-duration: 1s;
--webkit-animation-timing-function: ease-in-out;
--webkit-animation-iteration-count: infinite
+.screen.before {
+left: -100%;
+opacity: 0;
 }
-@-webkit-keyframes pulsate {
-0% {border-color: red;}
-50% {border-color: orange;}
-100% {border-color: red;}
+.screen.after {
+left: 100%;
+opacity: 0;
+}
+.screen.current-screen {
+left: 0;
+opacity: 1;
+}
+del {
+color: #999;
+text-decoration: strike-through;
 }
 

@@ -28,12 +28,31 @@ var Slides = window.Slides = {
                 el.find('li')
                     .addClass('slide')
                     .each(function() {
-                        var li = $(this)
+                        var li = $(this);
+                        var html = $('<span>'+li.html()+'</span>');
                         li
                             .addClass('slide')
-                            .html('<span>'+li.html()+'</span>');
+                            .html(html);
                     });
             }
+
+            // poor man's widont
+            // for some reason this causes the whole line to never wrap at all?
+            $('h1, li span').each(function() {
+                var el = $(this);
+                if (el.find('*').length == 0) {
+                    var text = el.html().trim();
+                    if (text.indexOf(' ') != -1 &&
+                            text.indexOf('&nbsp;') == -1) {
+                        var i = text.lastIndexOf(' ');
+                        if (i != -1) {
+                            text = text.substr(0, i) + "&nbsp;" +
+                                text.substr(i+1);
+                        }
+                        el.html(text);
+                    }
+                }
+            });
 
             // add everything to the latest screen
             // (this means tags before the first h1 will be ignored)
@@ -101,6 +120,21 @@ var Slides = window.Slides = {
         }
 
         this.lock();
+
+        this.resize();
+        var that = this;
+        $(window).resize(function() {
+            that.resize();
+        });
+    },
+
+    resize: function() {
+        var fontSize = 100;
+        var height = $(window).height();
+        if (height < 768) {
+            fontSize = Math.max(Math.round(height/768*100), 0);
+        }
+        $('html').css('font-size', fontSize+'%');
     },
 
     lock: function() {
@@ -131,24 +165,37 @@ var Slides = window.Slides = {
         // set the current slide according to the window's hash
         this.slideNum = parseInt(window.location.hash.slice(1), 10) || 1;
 
+
+        this.slides.each(function() {
+            var el = $(this);
+            var hasScreen = el.hasClass('screen');
+            el.removeAttr('class');
+            el.addClass('slide');
+            if (hasScreen) {
+                el.addClass('screen');
+            }
+        });
+
         var
             before = this.slides.slice(0, this.slideNum-1),
             after = this.slides.slice(this.slideNum),
             current = this.slides.eq(this.slideNum-1);
 
-        before
-            .removeClass('current-slide')
-            .removeClass('current-screen')
-            .removeClass('after');
         before.addClass('before');
 
-        after
-            .removeClass('current-slide')
-            .removeClass('current-screen')
-            .removeClass('before');
         after.addClass('after');
 
-        current.addClass('current-slide').removeClass('before');
+        current.addClass('current-slide');
+
+        var prev = current.prev('li.slide');
+        for (var i=1; i<6; i++) {
+            if (prev.length == 1) {
+                prev.addClass('prev-'+i);
+                prev = prev.prev('li.slide');
+            } else {
+                break;
+            }
+        }
 
         // all screens are slides, but not all slides are screens
         // we hilight the current screen
