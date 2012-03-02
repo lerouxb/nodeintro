@@ -10,6 +10,8 @@ Contains the npm info. Run `npm install` to install the dependencies.
 
 The secret key that allows you to act as the speaker, the hostname and port. Make a copy of config.js.example and edit it, then run `node build`, then `node app`. To become the speaker, run `document.cookie = "key=KEY";` in a terminal and reload. (KEY is the key you set in config.json)
 
+Alternatively you could just view index.html directly in the browser without the server. Run `Slides.unlock();` in a JavaScript terminal and then you can advance the slides without becoming the speaker.
+
 
 ### build.js
 
