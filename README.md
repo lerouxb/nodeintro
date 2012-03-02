@@ -8,12 +8,12 @@ Contains the npm info. Run `npm install` to install the dependencies.
 
 ### config.json
 
-The secret key that allows you to act as the speaker, the hostname and port.
-<br>**REMEMBER TO EDIT THIS BEFORE RUNNING BUILD.JS.**
+The secret key that allows you to act as the speaker, the hostname and port. Make a copy of config.js.example and edit it, then run `node build`, then `node app`. To become the speaker, run `document.cookie = "key=KEY";` in a terminal and reload. (KEY is the key you set in config.json)
+
 
 ### build.js
 
-Use [node-markdown](https://github.com/andris9/node-markdown) to convert slides.md to html and then replace {{slides}} in template.html with that and save to index.html. Run it with `node build`.
+Use [node-markdown](https://github.com/andris9/node-markdown) to convert slides.md to html and then replace {{slides}}, {{host}} and {{port}} in template.html with that and save to index.html. Run it with `node build`.
 
 ### index.html
 
